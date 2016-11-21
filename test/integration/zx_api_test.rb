@@ -11,7 +11,7 @@ class ZxApiTest < ActionDispatch::IntegrationTest
 
   test 'post to zx server' do
     url = 'http://202.108.57.43:30280/'
-    xml = File.read("#{Rails.root}/test/zx/zx_xml1.xml")
+    xml = File.read("#{Rails.root}/test/integration/zx_xml1.xml")
 
     uri = URI(url)
     https = Net::HTTP.new(uri.host, uri.port)
