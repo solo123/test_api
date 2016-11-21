@@ -22,7 +22,9 @@ class ZxApiTest < ActionDispatch::IntegrationTest
     req = Net::HTTP::Post.new(uri, initheader = {"Content-Type": "text/xml"})
     req.body = xml
 
-    resp = https.start{|http| http.request(req)}
+    https.start do |http|
+      resp = http.request(req)
+    end
     puts "Resp_body: #{resp.body}"
   end
 =begin
