@@ -11,17 +11,19 @@ class ZxApiTest < ActionDispatch::IntegrationTest
 
   test 'post to zx server' do
     url = 'http://202.108.57.43:30280/'
-    xml = File.read("#{Rails.root}/test/zx/zx_xml1.xml")
+    #xml = File.read("#{Rails.root}/test/zx/zx_xml1.xml")
+    xml = "<ROOT></ROOT>"
 
     uri = URI(url)
     https = Net::HTTP.new(uri.host, uri.port)
-    https.use_ssl = true
-    req = Net::HTTP::Post.new(uri, initheader = {"Content-Type": "text/xml"})
-    req.body = xml
+    https.use_ssl = (uri.scheme == "https")
     https.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
+    req = Net::HTTP::Post.new(uri, initheader = {"Content-Type": "text/xml"})
+    req.body = xml
+
     resp = https.start{|http| http.request(req)}
-    puts "Resp: #{resp.inspect}"
+    puts "Resp_body: #{resp.body}"
   end
 =begin
   test "rsa" do
