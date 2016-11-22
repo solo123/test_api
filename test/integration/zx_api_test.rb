@@ -27,7 +27,7 @@ class ZxApiTest < ActionDispatch::IntegrationTest
     https.start do |http|
       resp = http.request(req)
     end
-    puts "Resp_body: #{resp.body}"
+    puts "Resp_body: #{resp.body.encode('utf-8', 'gbk')}"
     #byebug
   end
 =begin
