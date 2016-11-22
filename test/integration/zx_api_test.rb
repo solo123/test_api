@@ -1,4 +1,5 @@
 require 'test_helper'
+require 'byebug'
 require "openssl"
 
 class ZxApiTest < ActionDispatch::IntegrationTest
@@ -10,7 +11,7 @@ class ZxApiTest < ActionDispatch::IntegrationTest
   end
 
   test 'post to zx server' do
-    url = 'http://202.108.57.43:30280/'
+    url = 'https://202.108.57.43:30280/'
     #xml = File.read("#{Rails.root}/test/zx/zx_xml1.xml")
     xml = "<ROOT></ROOT>"
 
@@ -22,10 +23,12 @@ class ZxApiTest < ActionDispatch::IntegrationTest
     req = Net::HTTP::Post.new(uri, initheader = {"Content-Type": "text/xml"})
     req.body = xml
 
+    resp = nil
     https.start do |http|
       resp = http.request(req)
     end
     puts "Resp_body: #{resp.body}"
+    #byebug
   end
 =begin
   test "rsa" do
