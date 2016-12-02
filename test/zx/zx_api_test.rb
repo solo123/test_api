@@ -12,7 +12,8 @@ class ZxApiTest < ActionDispatch::IntegrationTest
 
   test 'post to zx server' do
     url = 'https://202.108.57.43:30280/'
-    xml = File.read("#{Rails.root}/test/integration/zx_xml1.xml")
+    xml = File.read("#{Rails.root}/test/zx/zx_xml1.xml")
+    xml_gbk = xml.encode('GBK', 'UTF-8')
     #xml = "<ROOT></ROOT>"
 
     uri = URI(url)
@@ -21,7 +22,7 @@ class ZxApiTest < ActionDispatch::IntegrationTest
     https.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
     req = Net::HTTP::Post.new(uri, initheader = {"Content-Type": "text/xml"})
-    req.body = xml
+    req.body = xml_gbk
 
     resp = nil
     https.start do |http|
