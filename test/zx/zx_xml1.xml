@@ -23,11 +23,26 @@
   <Pay_Ibank_Num>102100004943</Pay_Ibank_Num>
   <Acct_Num>0200049419200051454</Acct_Num>
   <Is_Nt_Two_Line>0</Is_Nt_Two_Line>
+  <Comm_Fee_Acct_Typ></Comm_Fee_Acct_Typ>
+  <Comm_Fee_Acct_Nm></Comm_Fee_Acct_Nm>
+  <Comm_Fee_Bank_Nm></Comm_Fee_Bank_Nm>
+  <Ibank_Num></Ibank_Num>
+  <Comm_Fee_Acct_Num></Comm_Fee_Acct_Num>
   <Dtl_Memo>ae351b342df716825cfc8d44b0bd9f46</Dtl_Memo>
   <Contr_Info_List>
     <Contrinfo>
-      <Pay_Typ_Encd>4098</Pay_Typ_Encd>
-      <Start_Dt>20161020</Start_Dt>
+      <Pay_Typ_Encd>00010003</Pay_Typ_Encd>
+      <Start_Dt>20161220</Start_Dt>
+      <Pay_Typ_Fee_Rate>0.003</Pay_Typ_Fee_Rate>
+    </Contrinfo>
+    <Contrinfo>
+      <Pay_Typ_Encd>00010002</Pay_Typ_Encd>
+      <Start_Dt>20161220</Start_Dt>
+      <Pay_Typ_Fee_Rate>0.003</Pay_Typ_Fee_Rate>
+    </Contrinfo>
+    <Contrinfo>
+      <Pay_Typ_Encd>00010001</Pay_Typ_Encd>
+      <Start_Dt>20161220</Start_Dt>
       <Pay_Typ_Fee_Rate>0.003</Pay_Typ_Fee_Rate>
     </Contrinfo>
   </Contr_Info_List>
@@ -773,5 +788,5 @@ z7jPe7nxkmhDodjBLaybqYguWFwwWAAAVv7WeRIPEk5XmMeJ/qUGaHLUcHJl
 tllj3RwlFeJ+3rT+FUL2vC4aVagO2CZJ5U2FlsWsE6vZAcK12dn4uoXbB+6i
 H3fz+1EoeD/3PTjf/ofgp/bJ//HEPXsAQAcA
 </Biz_Lics>
-  <Msg_Sign>MIICfAYJKoZIhvcNAQcCoIICbTCCAmkCAQExDzANBglghkgBZQMEAgEFADALBgkqhkiG9w0BBwGgADGCAkIwggI+AgEBMDAwKzELMAkGA1UEBhMCQ04xDTALBgNVBAsMBFBUTlIxDTALBgNVBAMMBHRlc3QCATAwDQYJYIZIAWUDBAIBBQCggeQwGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMTYxMjAyMTgwMzA0WjAvBgkqhkiG9w0BCQQxIgQg7drfha+whgJiG0XOAS3TGT5bdlxn8EiikNYF7ONcv6sweQYJKoZIhvcNAQkPMWwwajALBglghkgBZQMEASowCwYJYIZIAWUDBAEWMAsGCWCGSAFlAwQBAjAKBggqhkiG9w0DBzAOBggqhkiG9w0DAgICAIAwDQYIKoZIhvcNAwICAUAwBwYFKw4DAgcwDQYIKoZIhvcNAwICASgwDQYJKoZIhvcNAQEBBQAEggEACPI29vOwpGRqSf6OhepAxSVhbPStjG54Gego+71HqzsBJxZeE1VcmNUpyKmcdV8SssFbX4kc2J08GjA9iuiXBbZOoBPW70FxhgP4cCSdZNxa4BWT793109YVTILDHrSrM/7qkpBnzZxwX6xl3ku3smDMyoGRdR7QjPN6/y9nFw2wG05jlgoa757G/TyoDjZOF8KrztZcrFik0W+GBrAHWrlscgwedLnYmNI6YJHS69g3qoIu9r8EwKwsaE08cvdKesPcwu/Kn2ge6gB/6uFf5Iry/PYzbeKSLoujkZJSuiFWT2YLB9QNOtHNBx4yK1P6CrlfSR4u9MIUXS+Zfo4zKw==</Msg_Sign>
+  <Msg_Sign>MIICfAYJKoZIhvcNAQcCoIICbTCCAmkCAQExDzANBglghkgBZQMEAgEFADALBgkqhkiG9w0BBwGgADGCAkIwggI+AgEBMDAwKzELMAkGA1UEBhMCQ04xDTALBgNVBAsMBFBUTlIxDTALBgNVBAMMBHRlc3QCATAwDQYJYIZIAWUDBAIBBQCggeQwGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMTYxMjAzMTAyOTQ3WjAvBgkqhkiG9w0BCQQxIgQgidjAXqCOcf+tEJfCKkaRtFog6qQDnFrXwhM5D7beik4weQYJKoZIhvcNAQkPMWwwajALBglghkgBZQMEASowCwYJYIZIAWUDBAEWMAsGCWCGSAFlAwQBAjAKBggqhkiG9w0DBzAOBggqhkiG9w0DAgICAIAwDQYIKoZIhvcNAwICAUAwBwYFKw4DAgcwDQYIKoZIhvcNAwICASgwDQYJKoZIhvcNAQEBBQAEggEAOIam7Jd+UZOniboEW6zTiGaf3xQr+o/wYKfDCSkbp1zPUAl1ShkzhNQhnSZfnGvs9uWhbt213Rlm3VsWpSjtTCYMycbO6hYZLaCbCE2+GOaIoglNK30CfV2tpJ0amXMwjNKNTBR5CMWpDZwUy1j3tyGueiGdXlcjsL4ZEmO/mwjfM2nevVvjCWxKK5hLIwjRZd3hCqVRQN/CM2qnhOXjqwnMS/Az1JIAqOwh14itxFUsvHPHCC/lEaKYCWlFfs8WRMTXK/GqbugKdEjWigeIPk3nvgAIHVeMm4zDcS1SReDib+jVTfza7+fZtI8UdQRmvmxuELeBYVh8Z1acXe2ChA==</Msg_Sign>
 </ROOT>
