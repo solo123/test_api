@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="GBK"?>
 <ROOT>
   <Chnl_Id>10000007</Chnl_Id>
-  <Chnl_Mercht_Id>20161020115500029</Chnl_Mercht_Id>
+  <Chnl_Mercht_Id>20161020115500033</Chnl_Mercht_Id>
   <Pay_Chnl_Encd>0001</Pay_Chnl_Encd>
   <Mercht_Belg_Chnl_Id>10000007</Mercht_Belg_Chnl_Id>
   <Mercht_Full_Nm>商户入驻测试</Mercht_Full_Nm>
@@ -23,11 +23,11 @@
   <Pay_Ibank_Num>102100004943</Pay_Ibank_Num>
   <Acct_Num>0200049419200051454</Acct_Num>
   <Is_Nt_Two_Line>0</Is_Nt_Two_Line>
-  <Comm_Fee_Acct_Typ></Comm_Fee_Acct_Typ>
-  <Comm_Fee_Acct_Nm></Comm_Fee_Acct_Nm>
-  <Comm_Fee_Bank_Nm></Comm_Fee_Bank_Nm>
-  <Ibank_Num></Ibank_Num>
-  <Comm_Fee_Acct_Num></Comm_Fee_Acct_Num>
+  <Comm_Fee_Acct_Typ/>
+  <Comm_Fee_Acct_Nm/>
+  <Comm_Fee_Bank_Nm/>
+  <Ibank_Num/>
+  <Comm_Fee_Acct_Num/>
   <Dtl_Memo>ae351b342df716825cfc8d44b0bd9f46</Dtl_Memo>
   <Contr_Info_List>
     <Contrinfo>
@@ -788,5 +788,5 @@ z7jPe7nxkmhDodjBLaybqYguWFwwWAAAVv7WeRIPEk5XmMeJ/qUGaHLUcHJl
 tllj3RwlFeJ+3rT+FUL2vC4aVagO2CZJ5U2FlsWsE6vZAcK12dn4uoXbB+6i
 H3fz+1EoeD/3PTjf/ofgp/bJ//HEPXsAQAcA
 </Biz_Lics>
-  <Msg_Sign>MIICfAYJKoZIhvcNAQcCoIICbTCCAmkCAQExDzANBglghkgBZQMEAgEFADALBgkqhkiG9w0BBwGgADGCAkIwggI+AgEBMDAwKzELMAkGA1UEBhMCQ04xDTALBgNVBAsMBFBUTlIxDTALBgNVBAMMBHRlc3QCATAwDQYJYIZIAWUDBAIBBQCggeQwGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMTYxMjAzMTAyOTQ3WjAvBgkqhkiG9w0BCQQxIgQgidjAXqCOcf+tEJfCKkaRtFog6qQDnFrXwhM5D7beik4weQYJKoZIhvcNAQkPMWwwajALBglghkgBZQMEASowCwYJYIZIAWUDBAEWMAsGCWCGSAFlAwQBAjAKBggqhkiG9w0DBzAOBggqhkiG9w0DAgICAIAwDQYIKoZIhvcNAwICAUAwBwYFKw4DAgcwDQYIKoZIhvcNAwICASgwDQYJKoZIhvcNAQEBBQAEggEAOIam7Jd+UZOniboEW6zTiGaf3xQr+o/wYKfDCSkbp1zPUAl1ShkzhNQhnSZfnGvs9uWhbt213Rlm3VsWpSjtTCYMycbO6hYZLaCbCE2+GOaIoglNK30CfV2tpJ0amXMwjNKNTBR5CMWpDZwUy1j3tyGueiGdXlcjsL4ZEmO/mwjfM2nevVvjCWxKK5hLIwjRZd3hCqVRQN/CM2qnhOXjqwnMS/Az1JIAqOwh14itxFUsvHPHCC/lEaKYCWlFfs8WRMTXK/GqbugKdEjWigeIPk3nvgAIHVeMm4zDcS1SReDib+jVTfza7+fZtI8UdQRmvmxuELeBYVh8Z1acXe2ChA==</Msg_Sign>
+  <Msg_Sign>MIICfAYJKoZIhvcNAQcCoIICbTCCAmkCAQExDzANBglghkgBZQMEAgEFADALBgkqhkiG9w0BBwGgADGCAkIwggI+AgEBMDAwKzELMAkGA1UEBhMCQ04xDTALBgNVBAsMBFBUTlIxDTALBgNVBAMMBHRlc3QCATAwDQYJYIZIAWUDBAIBBQCggeQwGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMTYxMjAzMTA0NDQ1WjAvBgkqhkiG9w0BCQQxIgQg7KClFqQJnZsA61Z0zwOBagXRTtp9q3DJpsmCXMC6rF4weQYJKoZIhvcNAQkPMWwwajALBglghkgBZQMEASowCwYJYIZIAWUDBAEWMAsGCWCGSAFlAwQBAjAKBggqhkiG9w0DBzAOBggqhkiG9w0DAgICAIAwDQYIKoZIhvcNAwICAUAwBwYFKw4DAgcwDQYIKoZIhvcNAwICASgwDQYJKoZIhvcNAQEBBQAEggEAYgpaTGkxEnLoEfMrLxuL1H64Adh5BSIvrAT88LniWHATSnfU3dqA7csCuz8d8C41mCCjqSWv7gZe3Wx9/xpO0jUZYX2SvjOqGdflL21t2B1orG69ERx5novaDdId70xkaQHppV/pmSKmo2b7af31Nd9NV0+qthOChZ9H9Ifk5R78uVN96Pta5QJ501bA0zAHjgDXB8Fq2XPJOSgYQMZlKJn+vdnWb4soPj+c8iCK8hA6PEtuZ/wCfdc6DKpPEmwBpi+KvnE+h27LY99waWKtFnucMTLpAjJlp9d0pDnZndS7W6t+QBAtLXeqAWyGV1Ii4E9H0t/y4OhHG8jJsQnoLQ==</Msg_Sign>
 </ROOT>
