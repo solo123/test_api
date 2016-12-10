@@ -30,6 +30,28 @@ class ZxApiTest < ActionDispatch::IntegrationTest
     puts "Resp_body: #{resp.body.encode('utf-8', 'gbk')}"
     #byebug
   end
+
+  test 'post demo to zx server' do
+    url = 'https://202.108.57.43:30280/'
+    xml = File.read("#{Rails.root}/test/zx/demo.xml")
+    xml_gbk = xml.encode('GBK', 'UTF-8')
+
+    uri = URI(url)
+    https = Net::HTTP.new(uri.host, uri.port)
+    https.use_ssl = (uri.scheme == "https")
+    https.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+    req = Net::HTTP::Post.new(uri, initheader = {"Content-Type": "text/xml"})
+    req.body = xml_gbk
+
+    resp = nil
+    https.start do |http|
+      resp = http.request(req)
+    end
+    puts "demo Resp_body: #{resp.body.encode('utf-8', 'gbk')}"
+    #byebug
+  end
+
 =begin
   test "rsa" do
     pri = OpenSSL::PKey::RSA.new(File.read("#{AppConfig.get('pooul', 'keys_path')}/pooul_rsa_private.pem"))

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="GBK"?>
+<ROOT>
+  <Chnl_Id>10000007</Chnl_Id>
+  <Chnl_Mercht_Id>20161020115500029</Chnl_Mercht_Id>
+  <Pay_Chnl_Encd>0001</Pay_Chnl_Encd>
+  <Mercht_Belg_Chnl_Id>10000007</Mercht_Belg_Chnl_Id>
+  <Mercht_Full_Nm>商户入驻测试</Mercht_Full_Nm>
+  <Mercht_Sht_Nm>商户入驻测试</Mercht_Sht_Nm>
+  <Cust_Serv_Tel>15712945988</Cust_Serv_Tel>
+  <Contcr_Nm>张XX</Contcr_Nm>
+  <Contcr_Tel></Contcr_Tel>
+  <Contcr_Mobl_Num></Contcr_Mobl_Num>
+  <Contcr_Eml></Contcr_Eml>
+  <Opr_Cls>2016062900190127</Opr_Cls>
+  <Mercht_Memo></Mercht_Memo>
+  <Prov>河南</Prov>
+  <Urbn>郑州</Urbn>
+  <Dtl_Addr>郑州市金水区花园南路</Dtl_Addr>
+  <Acct_Nm>测试</Acct_Nm>
+  <Opn_Bnk>中国银行金融街支行</Opn_Bnk>
+  <Is_Nt_CITIC>1</Is_Nt_CITIC>
+  <Acct_Typ>1</Acct_Typ>
+  <Pay_Ibank_Num>102100004943</Pay_Ibank_Num>
+  <Acct_Num>0200049419200051454</Acct_Num>
+  <Is_Nt_Two_Line>0</Is_Nt_Two_Line>
+  <Comm_Fee_Acct_Typ></Comm_Fee_Acct_Typ>
+  <Comm_Fee_Acct_Nm></Comm_Fee_Acct_Nm>
+  <Comm_Fee_Bank_Nm></Comm_Fee_Bank_Nm>
+  <Ibank_Num></Ibank_Num>
+  <Comm_Fee_Acct_Num></Comm_Fee_Acct_Num>
+  <Biz_Lics>VGhpcyBpcyBhdHRhY2hfMQo=</Biz_Lics>
+  <Dtl_Memo>58fb2520b56443bec33b812d936b1585</Dtl_Memo>
+  <Contr_Info_List>
+    <Contrinfo>
+      <Pay_Typ_Encd>00010002</Pay_Typ_Encd>
+      <Pay_Typ_Fee_Rate>0.003</Pay_Typ_Fee_Rate>
+      <Start_Dt>20161020</Start_Dt>
+    </Contrinfo>
+  </Contr_Info_List>
+  <Appl_Typ>0</Appl_Typ>
+  <trancode>0100SDC1</trancode>
+  <Msg_Sign>MIAGCSqGSIb3DQEHAqCAMIACAQExCzAJBgUrDgMCGgUAMIAGCSqGSIb3DQEHAQAAMYIBtjCCAbICAQEwMDArMQswCQYDVQQGEwJDTjENMAsGA1UECwwEUFROUjENMAsGA1UEAwwEdGVzdAIBMDAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMTYxMjEwMTg0ODI5WjAjBgkqhkiG9w0BCQQxFgQUje0GtaFq8fu5rJGDOFpFCbVbGEIwDQYJKoZIhvcNAQEBBQAEggEALrrcs7fM8lK/CR4LJSXmCkGji1odiLY3w53VQDktkVjlpPQI1uBfGT35PFbIl11brUy8rur0XLz41Hue1OvuJctTiOuFIVfMG1tzT6KMOZ0X+zfIRGwHo6TmfCO7s0bXlpY1qrW14LGUuBf2r9O+xBTx+90maMeyvrC6hKUnPmhhkunnscxGoaz9izI4wp6YE5v0bqZ3+Xz9qGhq2EgoRkmU6YKB1NjdBA6bPV3l7YDqKUXYokDpRg4j377ZPYNVhj7Zy92W5QAVp+VGQPzEpmUjJ4VPll8Kw10zW/yO+1A0vHRNdXb02485TrLZE2MphG5upbmpPrAPgbsucllh/gAAAAAAAA==</Msg_Sign>
+</ROOT>
