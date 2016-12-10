@@ -14,7 +14,6 @@ class ZxApiTest < ActionDispatch::IntegrationTest
     url = 'https://202.108.57.43:30280/'
     xml = File.read("#{Rails.root}/test/zx/zx_xml1.xml")
     xml_gbk = xml.encode('GBK', 'UTF-8')
-    #xml = "<ROOT></ROOT>"
 
     uri = URI(url)
     https = Net::HTTP.new(uri.host, uri.port)
