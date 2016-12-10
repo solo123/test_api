@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="GBK"?>
 <ROOT>
   <Chnl_Id>10000007</Chnl_Id>
-  <Chnl_Mercht_Id>QD_001</Chnl_Mercht_Id>
-  <Pay_Chnl_Encd>10000007</Pay_Chnl_Encd>
+  <Chnl_Mercht_Id>20161020115500029</Chnl_Mercht_Id>
+  <Pay_Chnl_Encd>0001</Pay_Chnl_Encd>
   <Mercht_Belg_Chnl_Id>10000007</Mercht_Belg_Chnl_Id>
-  <Mercht_Full_Nm>商户全名</Mercht_Full_Nm>
-  <Mercht_Sht_Nm>简称</Mercht_Sht_Nm>
-  <Cust_Serv_Tel>0755-82000001</Cust_Serv_Tel>
-  <Contcr_Nm>张经理</Contcr_Nm>
+  <Mercht_Full_Nm>商户入驻测试</Mercht_Full_Nm>
+  <Mercht_Sht_Nm>商户入驻测试</Mercht_Sht_Nm>
+  <Cust_Serv_Tel>15712945988</Cust_Serv_Tel>
+  <Contcr_Nm>张xx</Contcr_Nm>
   <Contcr_Tel>0755-8008008000</Contcr_Tel>
-  <Contcr_Mobl_Num>0755-82000001</Contcr_Mobl_Num>
+  <Contcr_Mobl_Num>15712945988</Contcr_Mobl_Num>
   <Contcr_Eml>sales@pooul.cn</Contcr_Eml>
-  <Opr_Cls>ad</Opr_Cls>
+  <Opr_Cls>2016062900190127</Opr_Cls>
   <Mercht_Memo>企业信息memo</Mercht_Memo>
   <Prov>广东</Prov>
   <Urbn>深圳市</Urbn>
   <Dtl_Addr>科技园留学生创业大厦304</Dtl_Addr>
-  <Acct_Nm>db</Acct_Nm>
-  <Opn_Bnk>zx</Opn_Bnk>
+  <Acct_Nm>测试</Acct_Nm>
+  <Opn_Bnk>中国银行金融街支行</Opn_Bnk>
   <Is_Nt_CITIC>1</Is_Nt_CITIC>
-  <Acct_Typ>ddd</Acct_Typ>
-  <Pay_Ibank_Num>abc0123</Pay_Ibank_Num>
-  <Acct_Num>123</Acct_Num>
-  <Is_Nt_Two_Line>1</Is_Nt_Two_Line>
+  <Acct_Typ>account_type</Acct_Typ>
+  <Pay_Ibank_Num>102100004943</Pay_Ibank_Num>
+  <Acct_Num>0200049419200051454</Acct_Num>
+  <Is_Nt_Two_Line>0</Is_Nt_Two_Line>
   <Comm_Fee_Acct_Nm/>
   <Comm_Fee_Bank_Nm/>
   <Ibank_Num/>
   <Comm_Fee_Acct_Num/>
-  <Biz_Lics>UEsDBBQAAAAIALKTikl1oR3vEQAAABEAAAADAAAAYWlkC8nILFYAosSSksTk
-jHhDLgBQSwECNAMUAAAACACyk4pJdaEd7xEAAAARAAAAAwAAAAAAAAABAAAA
+  <Biz_Lics>UEsDBBQAAAAIAIe1ikl1oR3vEQAAABEAAAADAAAAYWlkC8nILFYAosSSksTk
+jHhDLgBQSwECNAMUAAAACACHtYpJdaEd7xEAAAARAAAAAwAAAAAAAAABAAAA
 pIEAAAAAYWlkUEsFBgAAAAABAAEAMQAAADIAAAAAAA==
 </Biz_Lics>
-  <Dtl_Memo>76c9055f659b183bdc0f5bc0e4cf3ef0</Dtl_Memo>
+  <Dtl_Memo>9a200b95440e8ffd2805312c14ef06c3</Dtl_Memo>
   <Contr_Info_List>
     <Contrinfo>
       <Pay_Typ_Encd>00010003</Pay_Typ_Encd>
@@ -51,5 +51,5 @@ pIEAAAAAYWlkUEsFBgAAAAABAAEAMQAAADIAAAAAAA==
   </Contr_Info_List>
   <Appl_Typ>0</Appl_Typ>
   <trancode>0100SDC1</trancode>
-  <Msg_Sign>MIICfAYJKoZIhvcNAQcCoIICbTCCAmkCAQExDzANBglghkgBZQMEAgEFADALBgkqhkiG9w0BBwGgADGCAkIwggI+AgEBMDAwKzELMAkGA1UEBhMCQ04xDTALBgNVBAsMBFBUTlIxDTALBgNVBAMMBHRlc3QCATAwDQYJYIZIAWUDBAIBBQCggeQwGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMTYxMjEwMTAyOTM3WjAvBgkqhkiG9w0BCQQxIgQgtDTmeylssbF58e/R9OwZ8v/tToV1GP794n7sjEU/dDEweQYJKoZIhvcNAQkPMWwwajALBglghkgBZQMEASowCwYJYIZIAWUDBAEWMAsGCWCGSAFlAwQBAjAKBggqhkiG9w0DBzAOBggqhkiG9w0DAgICAIAwDQYIKoZIhvcNAwICAUAwBwYFKw4DAgcwDQYIKoZIhvcNAwICASgwDQYJKoZIhvcNAQEBBQAEggEAFXfNBFnHRImnHSGq8B4Hs2hOLsYRoTF9CCSGYF8Q6rVzpT3wtMlU5hqr3xaJmq04JvPZ8L6FXSsmwTiPFXsCBkARf+ff1ondrUhAy2vo7wHa+J0UP8jonmjamVZWY4FQh4xkGRo6U/yAOQ/NqqsCNlNRSFc5HhCxscruepD/2365n/9raLxQQV9MjkwtlMSmW+SwowIHo9vEERU5sfaGLi1rlhBq+IfnTFYbZECJVISNeftThaX/tYFzJbj4uIPn3gKZ3T8vEl004ObkK3PAKbAr6aBUooTCd3rpxQvGQfFA1Gnm9NcvtTR+eVV0RhPtKgRlj2rhWz1Q0MdkkdRmuQ==</Msg_Sign>
+  <Msg_Sign>MIICfAYJKoZIhvcNAQcCoIICbTCCAmkCAQExDzANBglghkgBZQMEAgEFADALBgkqhkiG9w0BBwGgADGCAkIwggI+AgEBMDAwKzELMAkGA1UEBhMCQ04xDTALBgNVBAsMBFBUTlIxDTALBgNVBAMMBHRlc3QCATAwDQYJYIZIAWUDBAIBBQCggeQwGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMTYxMjEwMTQ0NDE0WjAvBgkqhkiG9w0BCQQxIgQguzyp/FOcD05rMk2zUfwUIkP8wq57L5cVor7/7K0DJHIweQYJKoZIhvcNAQkPMWwwajALBglghkgBZQMEASowCwYJYIZIAWUDBAEWMAsGCWCGSAFlAwQBAjAKBggqhkiG9w0DBzAOBggqhkiG9w0DAgICAIAwDQYIKoZIhvcNAwICAUAwBwYFKw4DAgcwDQYIKoZIhvcNAwICASgwDQYJKoZIhvcNAQEBBQAEggEAM2u8pJbE6g0iOwLWdmki+TNNRffdlap7+Edujr6OmHjfxetJ7AqgaN9nFDBSFBWAm2Vvm4SeRLGxGrvV3/wZ9eLWY6uHael+MfJehT9kbi1sfe/UD2zukyjsyaVg7qZFja82C4ZaxApidMoLMzzcf9GwMK/pBqH4Q9rrWnPAvzcmW9/4khWQ6ATZ4YCyn1bIFDGxUquCmVcd1mvJR+pjBHwOaBl8tVbVGzMfOJCZrDWwkNCZYq+lGFSdPPtJZM2zjX5wEcbzCyNIKKaohrDirN3WoKlsnYgcmz0hasRmKEtxo6qkWVtanFQx93FlZn5MXgEBRVzbZ09tWocN/ZMyfA==</Msg_Sign>
 </ROOT>
