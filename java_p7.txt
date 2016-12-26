@@ -1,0 +1,116 @@
+    0:d=0  hl=4 l=1571 cons: SEQUENCE          
+    4:d=1  hl=2 l=   9 prim: OBJECT            :pkcs7-signedData
+   15:d=1  hl=4 l=1556 cons: cont [ 0 ]        
+   19:d=2  hl=4 l=1552 cons: SEQUENCE          
+   23:d=3  hl=2 l=   1 prim: INTEGER           :01
+   26:d=3  hl=2 l=  14 cons: SET               
+   28:d=4  hl=2 l=  12 cons: SEQUENCE          
+   30:d=5  hl=2 l=   8 prim: OBJECT            :md5
+   40:d=5  hl=2 l=   0 prim: NULL              
+   42:d=3  hl=2 l=  11 cons: SEQUENCE          
+   44:d=4  hl=2 l=   9 prim: OBJECT            :pkcs7-data
+   55:d=3  hl=4 l=1081 cons: cont [ 0 ]        
+   59:d=4  hl=4 l=1077 cons: SEQUENCE          
+   63:d=5  hl=4 l= 797 cons: SEQUENCE          
+   67:d=6  hl=2 l=   3 cons: cont [ 0 ]        
+   69:d=7  hl=2 l=   1 prim: INTEGER           :02
+   72:d=6  hl=2 l=  20 prim: INTEGER           :53803FA28EB7FDDC18FC35A9FF8B3DA9C595B896
+   94:d=6  hl=2 l=  13 cons: SEQUENCE          
+   96:d=7  hl=2 l=   9 prim: OBJECT            :sha1WithRSAEncryption
+  107:d=7  hl=2 l=   0 prim: NULL              
+  109:d=6  hl=2 l= 108 cons: SEQUENCE          
+  111:d=7  hl=2 l=  38 cons: SET               
+  113:d=8  hl=2 l=  36 cons: SEQUENCE          
+  115:d=9  hl=2 l=   3 prim: OBJECT            :commonName
+  120:d=9  hl=2 l=  29 prim: UTF8STRING        :天威诚信RSA测试用户CA
+  151:d=7  hl=2 l=  18 cons: SET               
+  153:d=8  hl=2 l=  16 cons: SEQUENCE          
+  155:d=9  hl=2 l=   3 prim: OBJECT            :organizationalUnitName
+  160:d=9  hl=2 l=   9 prim: UTF8STRING        :RSA测试
+  171:d=7  hl=2 l=  33 cons: SET               
+  173:d=8  hl=2 l=  31 cons: SEQUENCE          
+  175:d=9  hl=2 l=   3 prim: OBJECT            :organizationName
+  180:d=9  hl=2 l=  24 prim: UTF8STRING        :天威诚信测试系统
+  206:d=7  hl=2 l=  11 cons: SET               
+  208:d=8  hl=2 l=   9 cons: SEQUENCE          
+  210:d=9  hl=2 l=   3 prim: OBJECT            :countryName
+  215:d=9  hl=2 l=   2 prim: PRINTABLESTRING   :CN
+  219:d=6  hl=2 l=  30 cons: SEQUENCE          
+  221:d=7  hl=2 l=  13 prim: UTCTIME           :161212094005Z
+  236:d=7  hl=2 l=  13 prim: UTCTIME           :171212094005Z
+  251:d=6  hl=2 l= 118 cons: SEQUENCE          
+  253:d=7  hl=2 l=  24 cons: SET               
+  255:d=8  hl=2 l=  22 cons: SEQUENCE          
+  257:d=9  hl=2 l=   3 prim: OBJECT            :organizationName
+  262:d=9  hl=2 l=  15 prim: UTF8STRING        :天威诚信RSA
+  279:d=7  hl=2 l=  11 cons: SET               
+  281:d=8  hl=2 l=   9 cons: SEQUENCE          
+  283:d=9  hl=2 l=   3 prim: OBJECT            :organizationalUnitName
+  288:d=9  hl=2 l=   2 prim: UTF8STRING        :RA
+  292:d=7  hl=2 l=  28 cons: SET               
+  294:d=8  hl=2 l=  26 cons: SEQUENCE          
+  296:d=9  hl=2 l=   3 prim: OBJECT            :organizationalUnitName
+  301:d=9  hl=2 l=  19 prim: UTF8STRING        :UID:800010000020029
+  322:d=7  hl=2 l=  24 cons: SET               
+  324:d=8  hl=2 l=  22 cons: SEQUENCE          
+  326:d=9  hl=2 l=   3 prim: OBJECT            :surname
+  331:d=9  hl=2 l=  15 prim: UTF8STRING        :800010000020029
+  348:d=7  hl=2 l=  21 cons: SET               
+  350:d=8  hl=2 l=  19 cons: SEQUENCE          
+  352:d=9  hl=2 l=   3 prim: OBJECT            :commonName
+  357:d=9  hl=2 l=  12 prim: UTF8STRING        :联信网络
+  371:d=6  hl=4 l= 290 cons: SEQUENCE          
+  375:d=7  hl=2 l=  13 cons: SEQUENCE          
+  377:d=8  hl=2 l=   9 prim: OBJECT            :rsaEncryption
+  388:d=8  hl=2 l=   0 prim: NULL              
+  390:d=7  hl=4 l= 271 prim: BIT STRING        
+  665:d=6  hl=3 l= 196 cons: cont [ 3 ]        
+  668:d=7  hl=3 l= 193 cons: SEQUENCE          
+  671:d=8  hl=2 l=   9 cons: SEQUENCE          
+  673:d=9  hl=2 l=   3 prim: OBJECT            :X509v3 Basic Constraints
+  678:d=9  hl=2 l=   2 prim: OCTET STRING      [HEX DUMP]:3000
+  682:d=8  hl=2 l=  11 cons: SEQUENCE          
+  684:d=9  hl=2 l=   3 prim: OBJECT            :X509v3 Key Usage
+  689:d=9  hl=2 l=   4 prim: OCTET STRING      [HEX DUMP]:030204F0
+  695:d=8  hl=2 l= 103 cons: SEQUENCE          
+  697:d=9  hl=2 l=   3 prim: OBJECT            :X509v3 CRL Distribution Points
+  702:d=9  hl=2 l=  96 prim: OCTET STRING      [HEX DUMP]:305E305CA05AA0588656687474703A2F2F697472757364656D6F2E636F6D2F546F7043412F7075626C69632F697472757363726C3F43413D30323039413642414638384545323539414244433738363030423239393331343332334141353734
+  800:d=8  hl=2 l=  31 cons: SEQUENCE          
+  802:d=9  hl=2 l=   3 prim: OBJECT            :X509v3 Authority Key Identifier
+  807:d=9  hl=2 l=  24 prim: OCTET STRING      [HEX DUMP]:30168014B46E6591914BD17BC1A09FA43E7DCF57E0B52E48
+  833:d=8  hl=2 l=  29 cons: SEQUENCE          
+  835:d=9  hl=2 l=   3 prim: OBJECT            :X509v3 Subject Key Identifier
+  840:d=9  hl=2 l=  22 prim: OCTET STRING      [HEX DUMP]:04144A47EC590AEE8B76C09D627D7F687A4289AD0016
+  864:d=5  hl=2 l=  13 cons: SEQUENCE          
+  866:d=6  hl=2 l=   9 prim: OBJECT            :sha1WithRSAEncryption
+  877:d=6  hl=2 l=   0 prim: NULL              
+  879:d=5  hl=4 l= 257 prim: BIT STRING        
+ 1140:d=3  hl=4 l= 431 cons: SET               
+ 1144:d=4  hl=4 l= 427 cons: SEQUENCE          
+ 1148:d=5  hl=2 l=   1 prim: INTEGER           :01
+ 1151:d=5  hl=3 l= 132 cons: SEQUENCE          
+ 1154:d=6  hl=2 l= 108 cons: SEQUENCE          
+ 1156:d=7  hl=2 l=  38 cons: SET               
+ 1158:d=8  hl=2 l=  36 cons: SEQUENCE          
+ 1160:d=9  hl=2 l=   3 prim: OBJECT            :commonName
+ 1165:d=9  hl=2 l=  29 prim: UTF8STRING        :天威诚信RSA测试用户CA
+ 1196:d=7  hl=2 l=  18 cons: SET               
+ 1198:d=8  hl=2 l=  16 cons: SEQUENCE          
+ 1200:d=9  hl=2 l=   3 prim: OBJECT            :organizationalUnitName
+ 1205:d=9  hl=2 l=   9 prim: UTF8STRING        :RSA测试
+ 1216:d=7  hl=2 l=  33 cons: SET               
+ 1218:d=8  hl=2 l=  31 cons: SEQUENCE          
+ 1220:d=9  hl=2 l=   3 prim: OBJECT            :organizationName
+ 1225:d=9  hl=2 l=  24 prim: UTF8STRING        :天威诚信测试系统
+ 1251:d=7  hl=2 l=  11 cons: SET               
+ 1253:d=8  hl=2 l=   9 cons: SEQUENCE          
+ 1255:d=9  hl=2 l=   3 prim: OBJECT            :countryName
+ 1260:d=9  hl=2 l=   2 prim: PRINTABLESTRING   :CN
+ 1264:d=6  hl=2 l=  20 prim: INTEGER           :53803FA28EB7FDDC18FC35A9FF8B3DA9C595B896
+ 1286:d=5  hl=2 l=  12 cons: SEQUENCE          
+ 1288:d=6  hl=2 l=   8 prim: OBJECT            :md5
+ 1298:d=6  hl=2 l=   0 prim: NULL              
+ 1300:d=5  hl=2 l=  13 cons: SEQUENCE          
+ 1302:d=6  hl=2 l=   9 prim: OBJECT            :rsaEncryption
+ 1313:d=6  hl=2 l=   0 prim: NULL              
+ 1315:d=5  hl=4 l= 256 prim: OCTET STRING      [HEX DUMP]:A37819FDF58CDE24050E43EC0F7D07CA08DC793F457B2AF0988F6CCCAEC4BFEF07774AD81F679E49AD8A4BBE3E9A3AB0654F56E12C48612E0B689CE0FFC039D64C92F1A741562EDF54D632A9989D0F42E96AE409D6643E4E3F0E8CFB1B3F0C100FD4C7C5231DEC47832F05B2854940752F851BCCA613DC6B4EE87627CF6F2DE1DF074A02E33A7AB69E25B703C60191DC2458F9871C137A4235E30F71E0D0308AB91F81F995D67B0D533D8B972636D1A710A2015BFDAB2B85CF5C8E8F39036E938C197E96D7ED9DD7B9151E7F0EB9D23B63454FCF1D582E41B162CC61136305FBA60CD896626A305C43A6F0F0A49149348764D6FF303C83FC392C3D6E00DD7540

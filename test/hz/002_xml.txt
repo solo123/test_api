@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="GBK"?>
+<AIPG>
+    <INFO>
+        <TRX_CODE>100010</TRX_CODE>
+        <VERSION>01</VERSION>
+        <DATA_TYPE>xml</DATA_TYPE>
+        <LEVEL>0</LEVEL>
+        <REQ_SN>201612191352199853</REQ_SN>
+        <SIGNED_MSG></SIGNED_MSG>
+    </INFO>
+    <BODY>
+        <TRANS_DETAIL>
+            <QRCODE_CHANNEL>1</QRCODE_CHANNEL>
+            <MERCHANT_ID>800010000020029</MERCHANT_ID>
+            <MER_ORD_DT>20161220</MER_ORD_DT>
+            <TX_AMT>0.01</TX_AMT>
+            <SUBJECT>rr</SUBJECT>
+            <DESC></DESC>
+            <NOTIFY_URL>http://abc.com</NOTIFY_URL>
+            <SCENE>1</SCENE>
+            <AUTH_CODE></AUTH_CODE>
+            <OPERATORID></OPERATORID>
+            <STOREID></STOREID>
+            <TERMINALID></TERMINALID>
+            <LIMITPAY></LIMITPAY>
+            <EXTEND1></EXTEND1>
+            <EXTEND2></EXTEND2>
+            <EXTEND3></EXTEND3>
+        </TRANS_DETAIL>
+    </BODY>
+</AIPG>
