@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PublicNoPayTest < ActionDispatch::IntegrationTest
+class PublicPayTest < ActionDispatch::IntegrationTest
   DEBUG_MODE = true
 
   def log(*params)
@@ -18,7 +18,7 @@ class PublicNoPayTest < ActionDispatch::IntegrationTest
   end
 
   test "公众号支付" do
-    url = "http://103.25.21.35:11111/gateway/qrcode/qrcodePay"
+    url = "https://www.ulpay.com/gateway/publicNo/publicNoPay"
     notify_url = 'http://pay.pooulcloud.cn/notify/test_notify'
     callback_url = "http://pay.pooulcloud.cn/callback/test_callback"
     order_id = 'ORD-' + Time.now.to_i.to_s + '-001'
@@ -60,63 +60,17 @@ xml.INFO {
     b64 = Base64.encode64(gzip)
 
     resp = HTTParty.post(url, body: b64, headers: {"Content-Type": "text/plain; charset=ISO-8859-1"})
+    puts resp
 
     txt_gzip = Base64.decode64(resp.body)
+    puts txt_gzip
     txt = ActiveSupport::Gzip.decompress(txt_gzip)
     txt.force_encoding('gbk')
     txt_no = txt.gsub(/<SIGNED_MSG>(.|\n)*<\/SIGNED_MSG>/, '<SIGNED_MSG></SIGNED_MSG>')
     rr = txt.match /<SIGNED_MSG>((.|\n)*)<\/SIGNED_MSG>/
     return_key = rr[1]
     txt_no_utf = txt_no.encode('utf-8', 'gbk')
-    puts "-----> 扫码支付结果：", txt_no_utf
-    assert verify(txt_no_utf, return_key)
-  end
-  test "条码支付(反扫)" do
-    url = "http://103.25.21.35:11111/gateway/qrcode/barcodePay"
-    notify_url = 'http://pay.pooulcloud.cn/notify/test_notify'
-    callback_url = "http://pay.pooulcloud.cn/callback/test_callback"
-    order_id = 'ORD-' + Time.now.to_i.to_s + '-001'
-    mch_id = "800010000020029"
-
-    builder = Nokogiri::XML::Builder.new(:encoding => 'GBK') do |xml|
-      xml.AIPG {
-        xml.INFO {
-          xml.TRX_CODE '100011'
-          xml.VERSION '01'
-          xml.REQ_SN order_id
-          xml.SIGNED_MSG '[sign]'
-        }
-        xml.BODY {
-          xml.TRANS_DETAIL {
-            xml.QRCODE_CHANNEL '1'
-            xml.MERCHANT_ID mch_id
-            xml.MER_ORD_DT '20161224'
-            xml.TX_AMT '0.01'
-            xml.SUBJECT 'test order'
-            xml.NOTIFY_URL notify_url
-            xml.SCENE '1'
-            xml.AUTH_CODE '123123123'
-          }
-        }
-      }
-    end
-    xml_str = builder.to_xml.gsub('[sign]', '')
-    xml_utf = xml_str
-    sn = sign1(xml_utf)
-    xml_sn = xml_str.gsub('<SIGNED_MSG></SIGNED_MSG>', "<SIGNED_MSG>#{sn}</SIGNED_MSG>")
-    gzip = ActiveSupport::Gzip.compress(xml_sn)
-    b64 = Base64.encode64(gzip)
-
-    resp = HTTParty.post(url, body: b64, headers: {"Content-Type": "text/plain; charset=ISO-8859-1"})
-
-    txt_gzip = Base64.decode64(resp.body)
-    txt = ActiveSupport::Gzip.decompress(txt_gzip)
-    txt.force_encoding('gbk')
-    txt_no = txt.gsub(/<SIGNED_MSG>(.|\n)*<\/SIGNED_MSG>/, '<SIGNED_MSG></SIGNED_MSG>')
-    rr = txt.match /<SIGNED_MSG>((.|\n)*)<\/SIGNED_MSG>/
-    return_key = rr[1]
-    txt_no_utf = txt_no.encode('utf-8', 'gbk')
-    puts "-----> 条码支付（反扫）", txt_no_utf
+    puts "-----> 公众号支付结果：", txt_no_utf
     assert verify(txt_no_utf, return_key)
   end
 
