@@ -8,23 +8,12 @@ class QueryQuickPayTest < ActionDispatch::IntegrationTest
     return unless DEBUG_MODE
     Rails.logger.info params.join("\n")
   end
-  def post_data(url, data)
-    uri = URI(url)
-    resp = Net::HTTP.post_form(uri, data)
-
-    log "request:", uri.inspect
-    log "resp type: ",  resp.inspect
-    log "resp body:", resp.body
-    resp
-  end
 
   test "支付订单查询" do
     url = "http://103.25.21.35:11111/gateway/qrcode/qrcodePay"
     notify_url = 'http://pay.pooulcloud.cn/notify/test_notify'
-    callback_url = "http://pay.pooulcloud.cn/callback/test_callback"
     order_id = 'ORD-' + Time.now.to_i.to_s + '-001'
     mch_id = "800010000020029"
-    key = "e1a8d02b839a46adaa9b4de5a2eb6762"
 
     builder = Nokogiri::XML::Builder.new(:encoding => 'GBK') do |xml|
       xml.AIPG {
@@ -46,20 +35,9 @@ class QueryQuickPayTest < ActionDispatch::IntegrationTest
         }
       }
     end
-    xml_str = builder.to_xml.gsub('[sign]', '')
-    xml_utf = xml_str
-    sn = sign1(xml_utf)
-    xml_sn = xml_str.gsub('<SIGNED_MSG></SIGNED_MSG>', "<SIGNED_MSG>#{sn}</SIGNED_MSG>")
-    gzip = ActiveSupport::Gzip.compress(xml_sn)
-    b64 = Base64.encode64(gzip)
-
-    resp = HTTParty.post(url, body: b64, headers: {"Content-Type": "text/plain; charset=ISO-8859-1"})
-
-    txt_gzip = Base64.decode64(resp.body)
-    txt = ActiveSupport::Gzip.decompress(txt_gzip)
-    txt.force_encoding('gbk')
+    txt = post_xml(builder, url)
     txt_no = txt.gsub(/<SIGNED_MSG>(.|\n)*<\/SIGNED_MSG>/, '<SIGNED_MSG></SIGNED_MSG>')
-    rr = txt.match /<SIGNED_MSG>((.|\n)*)<\/SIGNED_MSG>/
+    rr = txt.match( /<SIGNED_MSG>((.|\n)*)<\/SIGNED_MSG>/ )
     return_key = rr[1]
     txt_no_utf = txt_no.encode('utf-8', 'gbk')
     puts "-----> 扫码支付结果：", txt_no_utf
@@ -87,19 +65,7 @@ class QueryQuickPayTest < ActionDispatch::IntegrationTest
         }
       }
     end
-    query_xml_str = query_builder.to_xml.gsub('[sign]', '')
-    query_xml_utf = query_xml_str
-    query_sn = sign1(query_xml_utf)
-    query_xml_sn = query_xml_str.gsub('<SIGNED_MSG></SIGNED_MSG>', "<SIGNED_MSG>#{query_sn}</SIGNED_MSG>")
-    puts query_xml_sn
-    query_gzip = ActiveSupport::Gzip.compress(query_xml_sn)
-    query_b64 = Base64.encode64(query_gzip)
-
-    query_resp = HTTParty.post(query_url, body: query_b64, headers: {"Content-Type": "text/plain; charset=ISO-8859-1"})
-
-    query_txt_gzip = Base64.decode64(query_resp.body)
-    query_txt = ActiveSupport::Gzip.decompress(query_txt_gzip)
-    query_txt.force_encoding('gbk')
+    query_txt = post_xml(query_builder, query_url)
     query_txt_no = query_txt.gsub(/<SIGNED_MSG>(.|\n)*<\/SIGNED_MSG>/, '<SIGNED_MSG></SIGNED_MSG>')
     query_rr = query_txt.match /<SIGNED_MSG>((.|\n)*)<\/SIGNED_MSG>/
     query_return_key = query_rr[1]
@@ -111,6 +77,23 @@ class QueryQuickPayTest < ActionDispatch::IntegrationTest
   test "sign test simple" do
     msg = "abc123\nABC123"
     assert verify(msg, sign1(msg))
+  end
+
+  def post_xml(builder, url)
+    xml_str = builder.to_xml.gsub('[sign]', '')
+    xml_utf = xml_str.encode('utf-8', 'gbk')
+    puts xml_utf
+    sn = sign1(xml_utf)
+    xml_sn = xml_str.gsub('<SIGNED_MSG></SIGNED_MSG>', "<SIGNED_MSG>#{sn}</SIGNED_MSG>")
+    gzip = ActiveSupport::Gzip.compress(xml_sn)
+    b64 = Base64.encode64(gzip)
+
+    resp = HTTParty.post(url, body: b64, headers: {"Content-Type": "text/plain; charset=ISO-8859-1"})
+
+    txt_gzip = Base64.decode64(resp.body)
+    txt = ActiveSupport::Gzip.decompress(txt_gzip)
+    txt.force_encoding('gbk')
+    return txt
   end
 
   def sign(data)
