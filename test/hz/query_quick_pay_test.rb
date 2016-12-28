@@ -38,7 +38,7 @@ class QueryQuickPayTest < ActionDispatch::IntegrationTest
           xml.TRANS_DETAIL {
             xml.QRCODE_CHANNEL '1'
             xml.MERCHANT_ID mch_id
-            xml.MER_ORD_DT '20161224'
+            xml.MER_ORD_DT Time.now.strftime("%Y%m%d")
             xml.TX_AMT '0.01'
             xml.SUBJECT 'test order'
             xml.NOTIFY_URL notify_url
@@ -64,7 +64,48 @@ class QueryQuickPayTest < ActionDispatch::IntegrationTest
     txt_no_utf = txt_no.encode('utf-8', 'gbk')
     puts "-----> 扫码支付结果：", txt_no_utf
     assert verify(txt_no_utf, return_key)
-    byebug
+    ord_no = Nokogiri::XML::Document.parse(txt_no_utf).xpath("//ORD_NO").first.content
+
+    #  订单查询
+    query_url = 'http://103.25.21.35:11111/gateway/query/queryQuickPay'
+    query_builder = Nokogiri::XML::Builder.new(:encoding => 'GBK') do |xml|
+      xml.AIPG {
+        xml.INFO {
+          xml.TRX_CODE '100010'
+          xml.VERSION '01'
+          xml.REQ_SN ord_no
+          xml.SIGNED_MSG '[sign]'
+          xml.MERCHANT_ID mch_id
+        }
+        xml.BODY {
+          xml.QUERY_TRANS {
+            xml.MERC_ORD_NO order_id # 商户订单编号
+            xml.MERCHANT_ID mch_id
+            xml.QRCODE_CHANNEL '1'
+            xml.MERC_ORD_DT Time.now.strftime("%Y%m%d")
+          }
+        }
+      }
+    end
+    query_xml_str = query_builder.to_xml.gsub('[sign]', '')
+    query_xml_utf = query_xml_str
+    query_sn = sign1(query_xml_utf)
+    query_xml_sn = query_xml_str.gsub('<SIGNED_MSG></SIGNED_MSG>', "<SIGNED_MSG>#{query_sn}</SIGNED_MSG>")
+    puts query_xml_sn
+    query_gzip = ActiveSupport::Gzip.compress(query_xml_sn)
+    query_b64 = Base64.encode64(query_gzip)
+
+    query_resp = HTTParty.post(query_url, body: query_b64, headers: {"Content-Type": "text/plain; charset=ISO-8859-1"})
+
+    query_txt_gzip = Base64.decode64(query_resp.body)
+    query_txt = ActiveSupport::Gzip.decompress(query_txt_gzip)
+    query_txt.force_encoding('gbk')
+    query_txt_no = query_txt.gsub(/<SIGNED_MSG>(.|\n)*<\/SIGNED_MSG>/, '<SIGNED_MSG></SIGNED_MSG>')
+    query_rr = query_txt.match /<SIGNED_MSG>((.|\n)*)<\/SIGNED_MSG>/
+    query_return_key = query_rr[1]
+    query_txt_no_utf = query_txt_no.encode('utf-8', 'gbk')
+    puts "-----> 查询结果：", query_txt_no_utf 
+
   end
 
   test "sign test simple" do
