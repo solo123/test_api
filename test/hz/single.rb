@@ -18,8 +18,10 @@ class CreditExtensionTest < ActionDispatch::IntegrationTest
   end
 
   test "单笔代付" do
+    return
     url = "http://103.25.21.35:11111/gateway/single/singlePay"
-    req_sn = 'singlePay' + Time.now.to_i.to_s + '100030'
+    #req_sn = 'singlePay' + Time.now.to_i.to_s + '100030'
+    req_sn = Time.now.to_i.to_s
     mch_id = "800010000020029" # 合众主商户代码(必填)
     builder = Nokogiri::XML::Builder.new(:encoding => 'GBK') do |xml|
       xml.AIPG {
@@ -36,8 +38,8 @@ class CreditExtensionTest < ActionDispatch::IntegrationTest
             xml.SEND_TIME  Time.now.strftime("%H%M%S")
             xml.SEND_DT Time.now.strftime("%Y%m%d")
             xml.ACCOUNT_TYPE '00' # 账号类型: 00银行卡，01存折，02-对公账户，03-合众易宝账户
-            xml.ACCOUNT_NO '12341254124' # 账号
-            xml.ACCOUNT_NAME 'xx' # 账号名: 银行卡、存折或者对公账户的所有人姓名。
+            xml.ACCOUNT_NO '6217852000005608826' # 账号
+            xml.ACCOUNT_NAME '张扬' # 账号名: 银行卡、存折或者对公账户的所有人姓名。
             xml.AMOUNT '0.01' # 单位元，小数精确到分
           }
         }
@@ -53,11 +55,10 @@ class CreditExtensionTest < ActionDispatch::IntegrationTest
   end
 
   test "单笔代付查询" do
-    return
     url = "http://103.25.21.35:11111/gateway/single/singlePayQuery"
     req_sn = 'singlePayQuery' + Time.now.to_i.to_s + '200030'
     mch_id = "800010000020029" # 合众主商户代码(必填)
-    query_sn = '123123'
+    query_sn = '1482920333'
     query_date = Time.now.strftime("%Y%m%d")
     builder = Nokogiri::XML::Builder.new(:encoding => 'GBK') do |xml|
       xml.AIPG {
