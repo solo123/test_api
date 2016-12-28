@@ -17,23 +17,28 @@ class CreditExtensionTest < ActionDispatch::IntegrationTest
     resp
   end
 
-  test "授信申请" do
-    url = "http://103.25.21.35:11111/gateway/creditExtension/query"
-    req_sn = 'apply' + Time.now.to_i.to_s + '101001'
+  test "单笔代付" do
+    url = "http://103.25.21.35:11111/gateway/single/singlePay"
+    req_sn = 'singlePay' + Time.now.to_i.to_s + '100030'
     mch_id = "800010000020029" # 合众主商户代码(必填)
     builder = Nokogiri::XML::Builder.new(:encoding => 'GBK') do |xml|
       xml.AIPG {
         xml.INFO {
-          xml.TRX_CODE '101001'
+          xml.TRX_CODE '100030'
           xml.VERSION '01'
           xml.REQ_SN req_sn
           xml.SIGNED_MSG '[sign]'
         }
         xml.BODY {
           xml.TRANS_DETAIL {
+            xml.BUSINESS_CODE '04900'
             xml.MERCHANT_ID mch_id
-            xml.MER_ORD_DT Time.now.strftime("%Y%m%d")
-            xml.AMOUNT '1'
+            xml.SEND_TIME  Time.now.strftime("%H%M%S")
+            xml.SEND_DT Time.now.strftime("%Y%m%d")
+            xml.ACCOUNT_TYPE '00' # 账号类型: 00银行卡，01存折，02-对公账户，03-合众易宝账户
+            xml.ACCOUNT_NO '12341254124' # 账号
+            xml.ACCOUNT_NAME 'xx' # 账号名: 银行卡、存折或者对公账户的所有人姓名。
+            xml.AMOUNT '0.01' # 单位元，小数精确到分
           }
         }
       }
@@ -43,56 +48,31 @@ class CreditExtensionTest < ActionDispatch::IntegrationTest
     rr = txt.match( /<SIGNED_MSG>((.|\n)*)<\/SIGNED_MSG>/ )
     return_key = rr[1]
     txt_no_utf = txt_no.encode('utf-8', 'gbk')
-    puts "-----> 授信申请结果：", txt_no_utf
+    puts "-----> 单笔代付结果：", txt_no_utf
     assert verify(txt_no_utf, return_key)
   end
 
-  test "可授信额度查询" do
-    url = "http://103.25.21.35:11111/gateway/creditExtension/query"
-    mch_id = "800010000020029" # 合众主商户代码(必填)
-    builder = Nokogiri::XML::Builder.new(:encoding => 'GBK') do |xml|
-      xml.AIPG {
-        xml.INFO {
-          xml.TRX_CODE '101002'
-          xml.VERSION '01'
-          xml.SIGNED_MSG '[sign]'
-        }
-        xml.BODY {
-          xml.TRANS_DETAIL {
-            xml.MERCHANT_ID mch_id
-          }
-        }
-      }
-    end
-    txt = post_xml(builder, url)
-    txt_no = txt.gsub(/<SIGNED_MSG>(.|\n)*<\/SIGNED_MSG>/, '<SIGNED_MSG></SIGNED_MSG>')
-    rr = txt.match( /<SIGNED_MSG>((.|\n)*)<\/SIGNED_MSG>/ )
-    return_key = rr[1]
-    txt_no_utf = txt_no.encode('utf-8', 'gbk')
-    puts "-----> 可授信额度查询结果：", txt_no_utf
-    assert verify(txt_no_utf, return_key)
-  end
-
-  test "支付订单查询" do
+  test "单笔代付查询" do
     return
-    url = "http://122.112.2.132:11111/gateway/query/queryQuickPay"
-    req_sn = 'queryQuickPay' + Time.now.to_i.to_s + '200005'
+    url = "http://103.25.21.35:11111/gateway/single/singlePayQuery"
+    req_sn = 'singlePayQuery' + Time.now.to_i.to_s + '200030'
     mch_id = "800010000020029" # 合众主商户代码(必填)
-    merc_ord_no = '?'
+    query_sn = '123123'
+    query_date = Time.now.strftime("%Y%m%d")
     builder = Nokogiri::XML::Builder.new(:encoding => 'GBK') do |xml|
       xml.AIPG {
         xml.INFO {
-          xml.TRX_CODE '200005'
+          xml.TRX_CODE '200030'
           xml.VERSION '01'
-          xml.REQ_SN req_sn
+          xml.DATA_TYPE '0'
+          xml.REQ_SN req_sn  # 请求流水号
           xml.SIGNED_MSG '[sign]'
-          xml.MERCHANT_ID mch_id
         }
         xml.BODY {
           xml.TRANS_DETAIL {
-            xml.MERC_ORD_NO merc_ord_no
             xml.MERCHANT_ID mch_id
-            xml.MER_ORD_DT Time.now.strftime("%Y%m%d")
+            xml.QUERY_SN query_sn # 原交易流水号
+            xml.QUERY_DATE query_date # 原交易日期
           }
         }
       }
@@ -102,7 +82,37 @@ class CreditExtensionTest < ActionDispatch::IntegrationTest
     rr = txt.match( /<SIGNED_MSG>((.|\n)*)<\/SIGNED_MSG>/ )
     return_key = rr[1]
     txt_no_utf = txt_no.encode('utf-8', 'gbk')
-    puts "-----> 授信申请结果：", txt_no_utf
+    puts "-----> 单笔代付查询结果：", txt_no_utf
+    assert verify(txt_no_utf, return_key)
+  end
+
+  test "商户余额查询" do
+    return
+    url = "http://103.25.21.35:11111/gateway/qrbalance/querybBalance"
+    req_sn = 'querybBalance' + Time.now.to_i.to_s + '200031'
+    mch_id = "800010000020029" # 合众主商户代码(必填)
+    builder = Nokogiri::XML::Builder.new(:encoding => 'GBK') do |xml|
+      xml.AIPG {
+        xml.INFO {
+          xml.TRX_CODE '200031'
+          xml.VERSION '01'
+          xml.DATA_TYPE '0'
+          xml.REQ_SN req_sn
+          xml.SIGNED_MSG '[sign]'
+        }
+        xml.BODY {
+          xml.TRANS_DETAIL {
+            xml.MERCHANT_ID mch_id
+          }
+        }
+      }
+    end
+    txt = post_xml(builder, url)
+    txt_no = txt.gsub(/<SIGNED_MSG>(.|\n)*<\/SIGNED_MSG>/, '<SIGNED_MSG></SIGNED_MSG>')
+    rr = txt.match( /<SIGNED_MSG>((.|\n)*)<\/SIGNED_MSG>/ )
+    return_key = rr[1]
+    txt_no_utf = txt_no.encode('utf-8', 'gbk')
+    puts "-----> 商户余额查询结果：", txt_no_utf
     assert verify(txt_no_utf, return_key)
   end
 

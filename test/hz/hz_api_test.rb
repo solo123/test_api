@@ -19,7 +19,6 @@ class ZxApiTest < ActionDispatch::IntegrationTest
   end
 
   test "扫码支付" do
-    return
     url = "http://103.25.21.35:11111/gateway/qrcode/qrcodePay"
     notify_url = 'http://pay.pooulcloud.cn/notify/test_notify'
     callback_url = "http://pay.pooulcloud.cn/callback/test_callback"
@@ -40,7 +39,7 @@ class ZxApiTest < ActionDispatch::IntegrationTest
             xml.QRCODE_CHANNEL '1'
             xml.MERCHANT_ID mch_id
             xml.MER_ORD_DT '20161224'
-            xml.TX_AMT '0.01'
+            xml.TX_AMT '1.00'
             xml.SUBJECT 'test order'
             xml.NOTIFY_URL notify_url
           }
@@ -67,6 +66,7 @@ class ZxApiTest < ActionDispatch::IntegrationTest
     assert verify(txt_no_utf, return_key)
   end
   test "条码支付(反扫)" do
+    return
     url = "http://103.25.21.35:11111/gateway/qrcode/barcodePay"
     notify_url = 'http://pay.pooulcloud.cn/notify/test_notify'
     callback_url = "http://pay.pooulcloud.cn/callback/test_callback"
